@@ -1,0 +1,17 @@
+Seperate The Project By Putting it isolated By Activating Vitual Enviroment
+python3 -m venv venv   #This Make a VE
+source venv/bin/activate   #then this will set VE for mac
+.\venv\Scripts\Activate.ps1  #this for window powershell
+# EveryTime You Open Project, You Have to activate by: Activate venv: (.\venv\Scripts\Activate.ps1)
+
+
+Up-arrow = for going previous command in terminal
+history = gives history of commands
+
+#Libraries to install their work
+
+pip install -r(a file that start from r) requirements.txt   = work in everywhere
+
+1. numpy = 
+2. pandas = 
+3. 

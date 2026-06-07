@@ -1,0 +1,31 @@
+# Utilities
+numpy
+pandas
+
+
+# FACE RECOGINATION
+scikit-learn
+dlib-bin
+
+# Face Embedding
+git+https://github.com/ageitgey/face_recognition_models
+setuptools<70.0.0
+
+#Database
+supabase
+bcrypt
+
+
+# QR Generater
+segno
+
+# Deal with images
+pillow
+
+# Generater A Webpage
+streamlit
+
+
+#librosa
+#resemblyzer
+
