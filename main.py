@@ -5,7 +5,7 @@ def main():
     st.text_input('Enter your name', 'Type here...')
     col1, col2, col3 = st.columns(3, gap='large')
     with col1:
-        if st.button('Submit 1', type='primary', key='btn1', width=''):
+        if st.button('Submit 1', type='primary', key='btn1', width='s'):
             print("hi prince 1")
     with col2:
         if st.button('Submit 2', type='secondary', key='btn2', width='stretch'):

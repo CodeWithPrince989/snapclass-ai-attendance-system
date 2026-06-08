@@ -10,6 +10,8 @@ history = gives history of commands
 
 #Libraries to install their work
 
+Shift + Alt + F => for formatting py file
+
 pip install -r(a file that start from r) requirements.txt   = work in everywhere
 
 1. numpy = 

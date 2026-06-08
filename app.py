@@ -18,7 +18,6 @@ def main():
             student_screen()
         case None:
             home_screen()
-            style_base_layout()
-            
+
 
 main()
