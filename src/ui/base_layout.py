@@ -73,12 +73,38 @@ def style_base_layout():
                 margin-bottom:0rem !important;
             }
                 
+            .snap-class-title {
+                font-family: 'Climate Crisis', sans-serif !important;
+                font-size: 2rem !important;
+                line-height:0.9 !important;
+                margin-bottom:0rem !important;
+                color:#5865F2 !important;
+                text-align:left !important;
+            }
+                
             h3, h4, p {
                 font-family: 'Outfit', sans-serif;    
             }
                 
+            /* Style widget labels (like text input labels) to be black */
+            [data-testid="stWidgetLabel"] p,
+            [data-testid="stWidgetLabel"] {
+                color: black !important;
+            }
+                
+            /* Style input boxes (background, text color, border, and focus) */
+            div[data-testid="stTextInput"] input {
+                background-color: white !important;   /* Input box background */
+                border-radius: 5px !important;   
+                color: black !important;
+            }
+            
+            div[data-testid="stTextInput"] input:focus {
+                border-color: #2EA043 !important;     /* Border color when active/clicked */
+            }
+                
 
-            button{
+            button[kind="primary"]{
                 border-radius: 1.5rem !important;
                 background-color: #5865F2 !important;
                 color: white !important;
