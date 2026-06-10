@@ -6,7 +6,7 @@ import face_recognition_models
 from sklearn.svm import SVC
 import streamlit as st
 
-from src.database.db import get_all_students
+from ..database.db import get_all_students
 
 
 @st.cache_resource

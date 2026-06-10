@@ -1,5 +1,5 @@
 import streamlit as st
-from src.database.db import create_subject
+from ..database.db import create_subject
 
 
 

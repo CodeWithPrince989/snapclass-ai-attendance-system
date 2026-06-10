@@ -1,4 +1,4 @@
-from src.database.config import supabase
+from .config import supabase
 import bcrypt
 
 
