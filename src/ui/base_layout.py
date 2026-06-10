@@ -49,9 +49,9 @@ def style_base_layout():
                 
          /* Hide Top Bar of streamlit */
                 
-            #MainMenu, footer, header {
-                visibility: hidden;
-            }
+            # #MainMenu, footer, header {
+            #     visibility: hidden;
+            # }
                 
             .block-container {
                 padding-top:1.5rem !important;    
@@ -102,7 +102,14 @@ def style_base_layout():
             div[data-testid="stTextInput"] input:focus {
                 border-color: #2EA043 !important;     /* Border color when active/clicked */
             }
-                
+            button{
+                border-radius: 1.5rem !important;
+                background-color: #5865F2 !important;
+                color: white !important;
+                padding: 10px 20px !important;
+                border: none !important;
+                transition: transform 0.25s ease-in-out !important;
+                }
 
             button[kind="primary"]{
                 border-radius: 1.5rem !important;
@@ -113,7 +120,7 @@ def style_base_layout():
                 transition: transform 0.25s ease-in-out !important;
                 }
 
-            button[kind="secondary"]{
+            button[kind="secondary"], {
                 border-radius: 1.5rem !important;
                 background-color: #EB459E !important;
                 color: white !important;
@@ -133,6 +140,8 @@ def style_base_layout():
 
             button:hover{
                 transform :scale(1.05)}
+
+
         </style>  
 
                 """

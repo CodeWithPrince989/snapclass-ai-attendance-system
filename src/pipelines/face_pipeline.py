@@ -1,4 +1,5 @@
 
+
 import dlib
 import numpy as np
 import face_recognition_models
@@ -7,9 +8,11 @@ import streamlit as st
 
 from src.database.db import get_all_students
 
+
 @st.cache_resource
 def load_dlib_models():
-    detector = dlib.get_frontal_face_detector()
+    detector = dlib.get_frontal_face_detector() 
+
 
     sp = dlib.shape_predictor(
         face_recognition_models.pose_predictor_model_location()
@@ -25,23 +28,26 @@ def get_face_embeddings(image_np):
     detector, sp, facerec = load_dlib_models()
     faces = detector(image_np, 1)
 
-    encoding= []
+    encodings= []
 
     for face in faces:
         shape = sp(image_np, face)
-        face_description = facerec.compute_face_descriptor(image_np, shape, 1)
+        face_descriptor = facerec.compute_face_descriptor(image_np, shape, 1) #128 embedding
 
-        encoding.append(np.array(face_description))
-    return encoding
+        encodings.append(np.array(face_descriptor))
+    return encodings
 
+@st.cache_resource
 def get_trained_model():
     X = []
     y = []
+
 
     student_db = get_all_students()
 
     if not student_db:
         return None
+    
     for student in student_db:
         embedding = student.get('face_embedding')
         if embedding:
@@ -51,7 +57,7 @@ def get_trained_model():
     if len(X) ==0:
         return 0
     
-    clf = SVC(kernel='linear', probability=True, class_weigth='balanced')
+    clf = SVC(kernel='linear', probability=True, class_weight='balanced')
 
     try:
         clf.fit(X, y)
@@ -59,7 +65,8 @@ def get_trained_model():
         pass
 
     return {'clf': clf, 'X':X, "y":y}
-    
+
+
 def train_classifier():
     st.cache_resource.clear()
     model_data = get_trained_model()
@@ -70,6 +77,7 @@ def predict_attendance(class_image_np):
 
     detected_student = {}
 
+
     model_data = get_trained_model()
 
     if not model_data:
@@ -78,12 +86,12 @@ def predict_attendance(class_image_np):
     clf = model_data['clf']
     X_train = model_data['X']
     y_train = model_data['y']
-    
+
     all_students = sorted(list(set(y_train)))
 
     for encoding in encodings:
         if len(all_students)>= 2:
-            predicted_id = int(clf.predict([encoding])[0])
+            predicted_id= int(clf.predict([encoding])[0])
         else:
             predicted_id = int(all_students[0])
 
@@ -94,5 +102,6 @@ def predict_attendance(class_image_np):
         resemblance_threshold = 0.6
 
         if best_match_score <= resemblance_threshold:
-            detected_student[predicted_id] =True
-    return detected_student, all_students, len(encoding)
+            detected_student[predicted_id] = True
+    return detected_student, all_students, len(encodings)
+
