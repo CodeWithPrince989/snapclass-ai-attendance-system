@@ -153,7 +153,7 @@ def teacher_tab_take_attendance():
 
                             all_detected_ids.setdefault(student_id, []).append(f"Photo {idx+1}")
 
-                enrolled_res = supabase.table('subject_students').select("*, students(*)").eq('subject_id',selected_subject_id ).execute()
+                enrolled_res = supabase.table('subjects_students').select("*, students(*)").eq('subject_id',selected_subject_id ).execute()
                 enrolled_students = enrolled_res.data
 
                 if not enrolled_students:
@@ -312,7 +312,7 @@ def teacher_screen_login():
     st.space()
 
 
-    teacher_username = st.text_input("Enter username", placeholder='ananyaroy')
+    teacher_username = st.text_input("Enter username", placeholder='prince123@')
 
     teacher_pass = st.text_input("Enter password", type='password', placeholder="Enter password")
 
@@ -370,9 +370,9 @@ def teacher_screen_register():
     st.space()
 
     
-    teacher_username = st.text_input("Enter username", placeholder='ananyaroy')
+    teacher_username = st.text_input("Enter username", placeholder='prince123@')
 
-    teacher_name = st.text_input("Enter name", placeholder='Ananya Roy')
+    teacher_name = st.text_input("Enter name", placeholder='prince')
 
     teacher_pass = st.text_input("Enter password", type='password', placeholder="Enter password")
 

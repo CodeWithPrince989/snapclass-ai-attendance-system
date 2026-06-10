@@ -10,7 +10,7 @@ def home_screen():
     style_base_layout()
 
 
-    col1, col2 = st.columns(2, gap='xlarge')
+    col1, col2 = st.columns(2, gap="large")
 
     with col1:
         st.header("I'm Student")
