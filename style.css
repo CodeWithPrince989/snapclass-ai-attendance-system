@@ -6,17 +6,17 @@
     --bg-card: rgba(13, 20, 38, 0.45);
     --border-color: rgba(255, 255, 255, 0.08);
     --border-glow: rgba(99, 102, 241, 0.2);
-    
+
     --primary-grad: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
     --secondary-grad: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
     --accent-grad: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%);
-    
+
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
-    
+
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
-    
+
     --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -41,7 +41,8 @@ body {
 }
 
 /* Ambient Background Glows */
-body::before, body::after {
+body::before,
+body::after {
     content: '';
     position: absolute;
     width: 600px;
@@ -68,8 +69,13 @@ body::after {
 }
 
 @keyframes float-slow {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(50px, 50px) scale(1.1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(50px, 50px) scale(1.1);
+    }
 }
 
 .container {
@@ -171,8 +177,15 @@ nav ul li a:hover {
 }
 
 @keyframes pulse {
-    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
-    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+    0% {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
 }
 
 .hero h1 {
@@ -601,6 +614,7 @@ footer p:last-child {
     .hero h1 {
         font-size: 3rem;
     }
+
     .hero p {
         font-size: 1.15rem;
     }
@@ -608,37 +622,38 @@ footer p:last-child {
 
 @media (max-width: 768px) {
     nav ul {
-        display: none; /* simple burger menu can be introduced, but since it is a landing page we can keep it simple or wrap list */
+        display: none;
+        /* simple burger menu can be introduced, but since it is a landing page we can keep it simple or wrap list */
     }
-    
+
     .hero {
         padding: 8rem 0 5rem;
     }
-    
+
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .section-title {
         font-size: 2.25rem;
         margin-bottom: 3rem;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         align-items: stretch;
         max-width: 300px;
         margin: 0 auto;
     }
-    
+
     .timeline::before {
         left: 20px;
     }
-    
+
     .timeline-item {
         padding-left: 55px;
     }
-    
+
     .step-number {
         left: 2px;
         width: 38px;
@@ -646,8 +661,10 @@ footer p:last-child {
         font-size: 1.15rem;
         border-width: 2px;
     }
-    
-    .feature-card, .highlight, .stat-item {
+
+    .feature-card,
+    .highlight,
+    .stat-item {
         padding: 1.75rem 1.25rem;
     }
 }
